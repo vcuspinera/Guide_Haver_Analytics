@@ -1,0 +1,94 @@
+# Series {#series}
+
+Como se mencionó en la introducción, el Banco tiene contratado una subscripción a algunas de las bases de datos de esta empresa, las cuales contienen diversas series.
+
+[En este link](http://webinterno/centro-de-informacion-electronica/acceso-a-recursos-electronicos/bases-de-datos-con-informacion-estadistica/haver-analytics-global/haver-analytics-global--.html) podrás para revisar las bases de datos contratadas por Banxico a Haver Analytics.
+
+Es importante mencionar que aunque algunas serie se encuentran replicadas en bases de datos distintas, estas pueden tener algunas pequeñas modificaciones para ajustarse a la periodicidad o formato de las otras series de la base de datos.
+
+## Bases de datos
+En el siguiente cuadro se muestran las 29 bases de datos contratadas por Banxico, junto con su descripción y número de series.^[Información consultada el 2020-11-24 en DLX y a través de Python.]
+
+| Database | Group| Description | No. de series |
+|:---------|:-----|:------------|--------------:|
+|USECON  | U.S. Detail | United States Economic Statistics|63,934 | 
+|SURVEYS | U.S. Detail | Surveys Including FED Special Series|68,888 |
+|SURVEYW | U.S. Detail | Weekly Surveys of Economic Activity |32,164 |
+| | | | |
+|GLSECTOR |Industry Detail | Global Sector Statistics |277,412 |
+| | | | |
+|WARDSINT | Automotive Detail | Global, Ward's Automotive Data |528 |
+| | | | |
+|G10 | Advance Ecopnomies | Country Summary Statistics |17,968 |
+| | | | |
+|EMERGE | Emerging Markets | Country Summary Statistics |42,103 |
+|EMERGELA | Emerging Markets | Latin America |70,705 |
+|EMERGEPR | Emerging Markets | Asia Pacific |256,779 |
+|EMERGECW | Emerging Markets | Central, Eastern Europe & Western Asia|252,574 |
+|EMERGEMA | Emerging Markets | Middle East & Africa|152,190 |
+|CHINA | Emerging Markets | CEIC Premium China Database |377,004 |
+| | | | |
+|EIUIAMER | EIU Market Indicators | Americas |4,948 |
+|EIUIASIA | EIU Market Indicators | Asia & Australasia |6,957 |
+|EIUIEEUR | EIU Market Indicators | Eastern Europe|4,406 |
+|EIUIWEUR | EIU Market Indicators | Western Europe|7,543 |
+|EIUIMENA | EIU Market Indicators | Middle East & North Africa|2,534 |
+|EIUISUBS | EIU Market Indicators | Sub-Saharan Africa|1,,381 |
+|EIUIREGS | EIU Market Indicators | World & Regional Aggregates|4,170 |
+| | | | |
+|IIFDATA | Institute of International Finance Forecasts | IIF Forecasts |16,161 |
+| | | | |
+|FELATA | Focuseconomics Consensus Forecasts | Latin & Central America |7,703 |
+|FEAANZ | Focuseconomics Consensus Forecasts | Asia & Australia/New Zealand |8,069 |
+|FEMAJR | Focuseconomics Consensus Forecasts | Major Economies & Euro Area |13,114 |
+|FEEEUR | Focuseconomics Consensus Forecasts | Eastern Europe |8,465 |
+|FELATAH | Focuseconomics Consensus Forecasts | Latin & Central America: Historical |39,000 |
+|FEAANZH | Focuseconomics Consensus Forecasts | Asia & Australia/New Zealand: Historical |45,970 |
+|FEMAJRH | Focuseconomics Consensus Forecasts | Major Economies & Euro Area: Historical |67,304 |
+|FEEEURH | Focuseconomics Consensus Forecasts | Eastern Europe: Historical |48,610 |
+|FXRATES | Focuseconomics Consensus Forecasts | Currency Conversion Database |391 |
+
+## Código de Series
+
+Las __series__ disponibles se pueden consultar de la siguiente forma:
+
+- Navegando en el _Directorio de Series_ directamente en la aplicación DLX o en el add-in de Haver para Excel.
+- Consultar las series de una base de datos en particular a través de Python:
+```
+import Haver
+Haver.metadata(database='database_code')
+```
+
+El código completo de una serie se divide en 4 partes. Por ejemplo, el nombre completo de la serie de Dinero en Circulación es `C273FMCE@EMERGELA`, y se divide de la siguiente forma:
+
+| C | 273 | FMCE | \@EMERGELA |
+|---|-----|------|------------|
+|tipo de ajuste| país | tema de la serie | base de datos | 
+
+<br>
+
+Algunas series que nos podrían ser de utilidad:
+
+|Serie |Database |Descripción (en Inglés) |
+|:-----|:--------|:-----------|
+|C273FMCE | EMERGELA |  Mexico: Monetary Aggregates: Currency in Circulation (EOP, NSA, Mil.NewPesos)|
+|C273XLDE | EMERGELA | Mexico: Exchange Rate (EOP, NewPeso/US\$)|
+|N273XEUE | EMERGELA | Mexico: BoM Euro Exchange Rate (EOP, Peso/Euro)|
+|N273XUKE | EMERGELA | Mexico: BoM UK Pound Sterling Exchange Rate (EOP, Peso/GBP)|
+|N273NGDP | EMERGELA | Mexico: Gross Domestic Product at Market Prices (NSAAR, Mil.NewPesos)|
+|N273NGPC | EMERGELA | Mexico: Gross Domestic Product at Market Prices (NSAAR, Mil.2013.NewPesos)|
+|N273PJ |EMERGELA | Mexico: Consumer Price Index (NSA, Jul 16-31 2018=100)|
+|N273EWUN | EMERGELA |Mexico: Minimum Wage: National (NSA, MXP/Day)|
+|N273POP | EMERGELA |Mexico: Population (Persons)|
+|N273TAUS | EMERGELA |Mexico: Tourist Arrivals by Air from United States (NSA, Persons)|
+|N273TACA | EMERGELA |Mexico: Tourist Arrivals by Air from Canada (NSA, Persons)|
+|N111FMC | G10 |U.S.: Money Supply: Currency (NSA, Bil.\$)|
+|H111FMR | G10 |U.S.: Monetary Base (SA, Bil.\$)|
+|N023FMC | G10 |EA 11-19: MFIs: Liab: Currency in Circulation (EOP, NSA, Bil.EUR)|
+|N023FMR | G10 |EA 11-19: Monetary Base (EOP, NSA, Bil.EUR)|
+|A273NETS | EIUIAMOER |Mexico: Internet Users (Thous)|
+|A273ATPT | EIUIAMOER |Mexico: Air Transport: Passengers (Thous)|
+
+Estas son algunas de las series que podrían ser útiles para el área; existen series similares a estas para un gran número de países lo cuál hace fácil su comparación.  
+
+Se recomienda revisar las series disponibles pues hay cerca de 1.9 millones de series en las 29 bases de datos contratadas por Banxico a Haver Analytics.

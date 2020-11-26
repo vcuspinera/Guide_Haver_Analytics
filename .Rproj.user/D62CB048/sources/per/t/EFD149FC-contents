@@ -1,0 +1,159 @@
+# Acceso {#acceso}
+
+Haver Analytics tiene distintas formas para consultar las series de tiempo que podemos usar:
+
+## Aplicación DLX 
+
+La forma más accesible y fácil para usar las series de tiempo de Haver Analytics es directamente desde su aplicación __DLX View & Graph__.  
+
+```{r icono, echo=FALSE, fig.cap="Ícono de aplicación de DLX.", out.width = '25%', fig.align='center'}
+knitr::include_graphics("_img/dlx_logo.png")
+```
+
+En esta aplicación se pueden seleccionar las series de interés, ver su gráfica y bases de datos, lo cual es muy intuitivo. En la barra superior se encuentran opciones más avanzadas con las cuales se pueden añadir múltiples series, exportar las bases de datos a Excel, personalizar funciones utilizando las series, dar formato a la gráfica, entre otras opciones.
+
+```{r app, echo=FALSE, fig.cap="Aplicación DLX para Haver Analytics.", out.width = '100%', fig.align='center'}
+knitr::include_graphics("_img/dlx_app.png")
+```
+
+## Add-in para Excel
+
+Las series de Haver Analytics se pueden consultar directamente desde Excel utilizando el _add-in_ DLX. Para verificar si se tiene instalado este complemento, en Excel deberías tener una pestaña que diga __DLX__. 
+
+Una vez seleccionada la pestaña, se deben seguir los siguientes pasos:
+
+1. __Seleccionar las series__, dando click en el ícono __DLXVG3__, el cual abre un catálogo para seleccionar las series.
+
+2. __Seleccionar rango__, usando el ícono __DLXRanger__, seleccionar la frecuencia y rangod e fechas de las series de tiempo.
+
+3. __Correr la consulta__, la cual se puede correr para la hoja seleccionada dando click en "Retrieve Worksheet", o todas las series del archivo dando click en "Retrieve Workbook".
+
+```{r addin, echo=FALSE, fig.cap="DLX add-in para Excel.", out.width = '100%', fig.align='center'}
+knitr::include_graphics("_img/dlx_add_in.png")
+```
+
+## Consulta con R
+
+El primer paso es instalar el paquete, corriendo la siguiente línea desde R o RStudio:
+
+`install.packages("Haver", repos="http://www.haver.com/r/")`
+
+Después habrá que llamar las librerías y fijar la ruta a las bases de datos con los siguientes comandos:
+
+```{r llamar_libreria, echo=TRUE, message=FALSE}
+# llamar librería de Haver Analytics y tidyverse
+library(Haver)
+library(tidyverse)
+
+# fijar la ruta de las bases de datos
+haver.path()
+
+```
+
+Posteriormente hay que llamar a las series que nos interesen, y su metadata, las cuales se pueden graficar o manipular.
+
+```{r consulta_en_R, echo=TRUE}
+# ejemplo de consulta de serie
+currency <- haver.data(codes=c("c273fmce"), database = "EMERGELA", freq="q", start=as.Date("2010-01-01", format="%Y-%m-%d"))
+
+# cambio de nombre
+colnames(currency)[colnames(currency) == "c273fmce"] <- "Currency_in_Circulation"
+
+# ver inicio de serie para identificar su estructura
+currency %>% head()
+
+# imprimir metadata
+haver.datamd(currency)
+
+# convertir serie a data.frame
+currency <- data.frame(currency)
+currency$date <- row.names(currency)
+
+# gráficar serie
+currency %>% ggplot() +
+  geom_line(aes(x = date, 
+                y = Currency_in_Circulation, 
+                group = 1), color="darkred") +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 60, vjust = 0.5)) + 
+  scale_x_discrete(breaks = currency$date[seq(1, length(currency$date), by = 2)])+
+  scale_y_continuous(limits = c(500000, 2000000), 
+                     labels = scales::dollar) +
+  labs(x = "Date", y = "Currency in Circulation")
+```
+
+Para acceder a la guía completa del paquete `Haver` en R puedes:
+
+- correr el siguiente comando en RStudio: `help("Haver")`, o
+
+- ingresar a la página oficial de [Haver Analytics](http://www.haver.com), dar click en _Client area_ donde te pedirán un código de usuario el cual te lo pueden dar a través del correo <data@haver.com>, seleccionar _Resources_, después ingresar en _Using DLX Data with Third Party Statistical Software_, y selecionar la __guía de usuario para R__ [@haver_r].
+
+
+## Consulta con Python
+
+El primer paso es instalar el paquete de Haver en Python, lo cual se puede relaizar de la siguiente manera:^[Basado en script para uso de Haver por primera vez, compartido por @haver_python_install de Haver Analytics.]
+
+- __interfaz__: desde PowerShell/Terminal, correr el siguiente comando:   
+
+```
+pip install Haver --extra-index-url https://urldefense.proofpoint.com/v2/url?u=http-3A__www.haver.com_Python&d=DwIGAg&c=AKs6EwELrBZKOG9H-C2eL9nCFyT6KLG5z2zMuwOnNTA&r=1xye9t3tMb09G6CmueM5cDX4CvWN9LC-lHqLRumN6Ls&m=OzpuOY3Klwky0-MpBXHqoFFIN7cUKTHg3FHaKc18LaY&s=yWr_0mX3wkhn60y5OE2ZDv2Hb-rIrBaVzLVAmE0ghkA&e=  --trusted-host https://urldefense.proofpoint.com/v2/url?u=http-3A__www.haver.com&d=DwIGAg&c=AKs6EwELrBZKOG9H-C2eL9nCFyT6KLG5z2zMuwOnNTA&r=1xye9t3tMb09G6CmueM5cDX4CvWN9LC-lHqLRumN6Ls&m=OzpuOY3Klwky0-MpBXHqoFFIN7cUKTHg3FHaKc18LaY&s=KJOUUR_knntVVk2lyRqTBi8i7JLK_cfqqjh5Kcu1ReE&e=
+```
+...si esto no funciona, se tiene que realizar una instalación manual.
+
+- __manual__:
+  1. ingresar a la página <http://www.haver.com/Python/Haver/>, 
+  2. descargar el archivo de formato `wheel`, con extensión 'whl', que corresponda a la versión que tengas instalada de Python. Por ejemplo, el archivo `Haver-1.1.0-cp35-cp35mwin_amd64.whl` corresponde a la versión instalada de Python 3.5
+  3. Desde PowerShell/Terminal, ir a la carpeta donde se encuentre el archivo descargado en el punto anterior y correr el siguiente comando reemplazando 'archivo_wheel' por el nombre del archivo descargado
+
+```
+pip install archivo_wheel.whl
+```
+
+Ya instalado el paquete de Haver en Python, podemos empezar a trabajar ya sea directamente con Python o a través de alguna de sus interfaces (Jupyter Lab, Jupyter Notebook, Spider). Lo primero que tenemos que hacer es llamar las librerías y fijar la ruta a las bases de datos con los siguientes comandos:
+
+```{r call_reticulate, echo=FALSE, warning=FALSE}
+# llamar a reticulate para usar python en Rstudio
+library(reticulate)
+```
+
+```{python import_and_path, message=FALSE}
+# llamar librerias de Python
+import Haver as hv
+import pandas as pd
+import numpy as np
+import altair as alt
+
+# fijar la ruta de haver
+hv.path()
+
+```
+
+Posteriormente hay que llamar a las series que nos interesen, y su metadata, las cuales se pueden graficar o manipular.
+
+```
+# ejemplo de consulta de serie
+currency = hv.data(codes=["c273fmce"], database="EMERGELA", 
+                   frequency="q", startdate="2010-01-01")
+
+# cambio de nombre
+currency = currency.reset_index().dropna().rename(columns = {"index": "fecha", "c273fmce":"Currency_in_Circulation"})
+currency.fecha = [str(i) for i in currency.fecha]
+
+# obtener metadata
+currency_md = hv.metadata(codes=["c273fmce"], database="EMERGELA").T
+
+# graficar
+alt.Chart(currency).mark_line(color="darkred").encode(
+    x=alt.X('fecha', title="Date"),
+    y=alt.Y('Currency_in_Circulation:Q', title="Currency in Circulation"),
+    tooltip=['fecha', 'Currency_in_Circulation']
+).properties(
+    width=500
+)
+```
+
+![](_img/python_plot.png)
+
+Para acceder a la guía completa del paquete `Haver` en Python puedes:
+
+- ingresar a la página oficial de [Haver Analytics](http://www.haver.com), dar click en _Client area_ donde te pedirán un código de usuario el cual te lo pueden dar a través del correo <data@haver.com>, seleccionar _Resources_, después ingresar en _Using DLX Data with Third Party Statistical Software_, y selecionar la __guía de usuario para Python__ [@haver_python].

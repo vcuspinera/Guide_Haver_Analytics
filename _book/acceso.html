@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Parte 3 Acceso | Guía para usar Haver Analytics</title>
+  <meta name="description" content="Parte 3 Acceso | Guía para usar Haver Analytics, enfocándose en las series relacionadas con el dinero en efectivo y herramientas que podrían ser útiles a la Oficina de Estadística de la Dirección General de Emisión del Banco de México." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Parte 3 Acceso | Guía para usar Haver Analytics" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Parte 3 Acceso | Guía para usar Haver Analytics, enfocándose en las series relacionadas con el dinero en efectivo y herramientas que podrían ser útiles a la Oficina de Estadística de la Dirección General de Emisión del Banco de México." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Parte 3 Acceso | Guía para usar Haver Analytics" />
+  
+  <meta name="twitter:description" content="Parte 3 Acceso | Guía para usar Haver Analytics, enfocándose en las series relacionadas con el dinero en efectivo y herramientas que podrían ser útiles a la Oficina de Estadística de la Dirección General de Emisión del Banco de México." />
+  
+
+<meta name="author" content="Victor Cuspinera" />
+
+
+<meta name="date" content="2020-11-25" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="prereq.html"/>
+<link rel="next" href="series.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Guía para usar Haver Analytics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#salvedad-de-uso"><i class="fa fa-check"></i><b>1.1</b> Salvedad de uso</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="prereq.html"><a href="prereq.html"><i class="fa fa-check"></i><b>2</b> Prerequisitos</a><ul>
+<li class="chapter" data-level="2.1" data-path="prereq.html"><a href="prereq.html#instalación-del-software"><i class="fa fa-check"></i><b>2.1</b> Instalación del software</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="acceso.html"><a href="acceso.html"><i class="fa fa-check"></i><b>3</b> Acceso</a><ul>
+<li class="chapter" data-level="3.1" data-path="acceso.html"><a href="acceso.html#aplicación-dlx"><i class="fa fa-check"></i><b>3.1</b> Aplicación DLX</a></li>
+<li class="chapter" data-level="3.2" data-path="acceso.html"><a href="acceso.html#add-in-para-excel"><i class="fa fa-check"></i><b>3.2</b> Add-in para Excel</a></li>
+<li class="chapter" data-level="3.3" data-path="acceso.html"><a href="acceso.html#consulta-con-r"><i class="fa fa-check"></i><b>3.3</b> Consulta con R</a></li>
+<li class="chapter" data-level="3.4" data-path="acceso.html"><a href="acceso.html#consulta-con-python"><i class="fa fa-check"></i><b>3.4</b> Consulta con Python</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="series.html"><a href="series.html"><i class="fa fa-check"></i><b>4</b> Series</a><ul>
+<li class="chapter" data-level="4.1" data-path="series.html"><a href="series.html#bases-de-datos"><i class="fa fa-check"></i><b>4.1</b> Bases de datos</a></li>
+<li class="chapter" data-level="4.2" data-path="series.html"><a href="series.html#código-de-series"><i class="fa fa-check"></i><b>4.2</b> Código de Series</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Guía para usar Haver Analytics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="acceso" class="section level1">
+<h1><span class="header-section-number">Parte 3</span> Acceso</h1>
+<p>Haver Analytics tiene distintas formas para consultar las series de tiempo que podemos usar:</p>
+<div id="aplicación-dlx" class="section level2">
+<h2><span class="header-section-number">3.1</span> Aplicación DLX</h2>
+<p>La forma más accesible y fácil para usar las series de tiempo de Haver Analytics es directamente desde su aplicación <strong>DLX View &amp; Graph</strong>.</p>
+<div class="figure" style="text-align: center"><span id="fig:icono"></span>
+<img src="_img/dlx_logo.png" alt="Ícono de aplicación de DLX." width="25%" />
+<p class="caption">
+Figure 3.1: Ícono de aplicación de DLX.
+</p>
+</div>
+<p>En esta aplicación se pueden seleccionar las series de interés, ver su gráfica y bases de datos, lo cual es muy intuitivo. En la barra superior se encuentran opciones más avanzadas con las cuales se pueden añadir múltiples series, exportar las bases de datos a Excel, personalizar funciones utilizando las series, dar formato a la gráfica, entre otras opciones.</p>
+<div class="figure" style="text-align: center"><span id="fig:app"></span>
+<img src="_img/dlx_app.png" alt="Aplicación DLX para Haver Analytics." width="100%" />
+<p class="caption">
+Figure 3.2: Aplicación DLX para Haver Analytics.
+</p>
+</div>
+</div>
+<div id="add-in-para-excel" class="section level2">
+<h2><span class="header-section-number">3.2</span> Add-in para Excel</h2>
+<p>Las series de Haver Analytics se pueden consultar directamente desde Excel utilizando el <em>add-in</em> DLX. Para verificar si se tiene instalado este complemento, en Excel deberías tener una pestaña que diga <strong>DLX</strong>.</p>
+<p>Una vez seleccionada la pestaña, se deben seguir los siguientes pasos:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Seleccionar las series</strong>, dando click en el ícono <strong>DLXVG3</strong>, el cual abre un catálogo para seleccionar las series.</p></li>
+<li><p><strong>Seleccionar rango</strong>, usando el ícono <strong>DLXRanger</strong>, seleccionar la frecuencia y rangod e fechas de las series de tiempo.</p></li>
+<li><p><strong>Correr la consulta</strong>, la cual se puede correr para la hoja seleccionada dando click en “Retrieve Worksheet”, o todas las series del archivo dando click en “Retrieve Workbook”.</p></li>
+</ol>
+<div class="figure" style="text-align: center"><span id="fig:addin"></span>
+<img src="_img/dlx_add_in.png" alt="DLX add-in para Excel." width="100%" />
+<p class="caption">
+Figure 3.3: DLX add-in para Excel.
+</p>
+</div>
+</div>
+<div id="consulta-con-r" class="section level2">
+<h2><span class="header-section-number">3.3</span> Consulta con R</h2>
+<p>El primer paso es instalar el paquete, corriendo la siguiente línea desde R o RStudio:</p>
+<p><code>install.packages("Haver", repos="http://www.haver.com/r/")</code></p>
+<p>Después habrá que llamar las librerías y fijar la ruta a las bases de datos con los siguientes comandos:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="acceso.html#cb1-1"></a><span class="co"># llamar librería de Haver Analytics y tidyverse</span></span>
+<span id="cb1-2"><a href="acceso.html#cb1-2"></a><span class="kw">library</span>(Haver)</span>
+<span id="cb1-3"><a href="acceso.html#cb1-3"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
+<pre><code>## Warning: package &#39;tidyverse&#39; was built under R version 4.0.3</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="acceso.html#cb3-1"></a><span class="co"># fijar la ruta de las bases de datos</span></span>
+<span id="cb3-2"><a href="acceso.html#cb3-2"></a><span class="kw">haver.path</span>()</span></code></pre></div>
+<pre><code>## [1] &quot;\\\\bmapps\\Bases de Informacion\\DLX\\DATA\\&quot;</code></pre>
+<p>Posteriormente hay que llamar a las series que nos interesen, y su metadata, las cuales se pueden graficar o manipular.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="acceso.html#cb5-1"></a><span class="co"># ejemplo de consulta de serie</span></span>
+<span id="cb5-2"><a href="acceso.html#cb5-2"></a>currency &lt;-<span class="st"> </span><span class="kw">haver.data</span>(<span class="dt">codes=</span><span class="kw">c</span>(<span class="st">&quot;c273fmce&quot;</span>), <span class="dt">database =</span> <span class="st">&quot;EMERGELA&quot;</span>, <span class="dt">freq=</span><span class="st">&quot;q&quot;</span>, <span class="dt">start=</span><span class="kw">as.Date</span>(<span class="st">&quot;2010-01-01&quot;</span>, <span class="dt">format=</span><span class="st">&quot;%Y-%m-%d&quot;</span>))</span>
+<span id="cb5-3"><a href="acceso.html#cb5-3"></a></span>
+<span id="cb5-4"><a href="acceso.html#cb5-4"></a><span class="co"># cambio de nombre</span></span>
+<span id="cb5-5"><a href="acceso.html#cb5-5"></a><span class="kw">colnames</span>(currency)[<span class="kw">colnames</span>(currency) <span class="op">==</span><span class="st"> &quot;c273fmce&quot;</span>] &lt;-<span class="st"> &quot;Currency_in_Circulation&quot;</span></span>
+<span id="cb5-6"><a href="acceso.html#cb5-6"></a></span>
+<span id="cb5-7"><a href="acceso.html#cb5-7"></a><span class="co"># ver inicio de serie para identificar su estructura</span></span>
+<span id="cb5-8"><a href="acceso.html#cb5-8"></a>currency <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">head</span>()</span></code></pre></div>
+<pre><code>##         Currency_in_Circulation
+## 2010-Q1                597193.9
+## 2010-Q2                577815.5
+## 2010-Q3                588091.8
+## 2010-Q4                693423.1
+## 2011-Q1                634711.8
+## 2011-Q2                635323.3</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="acceso.html#cb7-1"></a><span class="co"># imprimir metadata</span></span>
+<span id="cb7-2"><a href="acceso.html#cb7-2"></a><span class="kw">haver.datamd</span>(currency)</span></code></pre></div>
+<pre><code>## 
+## HaverMetaData object:
+## 
+##   database code     startdate  enddate    frequency numobs
+## 1 emergela c273fmce 1989-01-31 2020-10-31 M         382   
+##   descriptor                    
+## 1 Mexico: Monetary Aggregates:..
+## 
+##   # of series records : 1
+##   database path       : \\bmapps\Bases de Informacion\DLX\DATA\
+##   query date and time : 2020-11-25 12:27:35</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="acceso.html#cb9-1"></a><span class="co"># convertir serie a data.frame</span></span>
+<span id="cb9-2"><a href="acceso.html#cb9-2"></a>currency &lt;-<span class="st"> </span><span class="kw">data.frame</span>(currency)</span>
+<span id="cb9-3"><a href="acceso.html#cb9-3"></a>currency<span class="op">$</span>date &lt;-<span class="st"> </span><span class="kw">row.names</span>(currency)</span>
+<span id="cb9-4"><a href="acceso.html#cb9-4"></a></span>
+<span id="cb9-5"><a href="acceso.html#cb9-5"></a><span class="co"># gráficar serie</span></span>
+<span id="cb9-6"><a href="acceso.html#cb9-6"></a>currency <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>() <span class="op">+</span></span>
+<span id="cb9-7"><a href="acceso.html#cb9-7"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">x =</span> date, </span>
+<span id="cb9-8"><a href="acceso.html#cb9-8"></a>                <span class="dt">y =</span> Currency_in_Circulation, </span>
+<span id="cb9-9"><a href="acceso.html#cb9-9"></a>                <span class="dt">group =</span> <span class="dv">1</span>), <span class="dt">color=</span><span class="st">&quot;darkred&quot;</span>) <span class="op">+</span></span>
+<span id="cb9-10"><a href="acceso.html#cb9-10"></a><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span></span>
+<span id="cb9-11"><a href="acceso.html#cb9-11"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">60</span>, <span class="dt">vjust =</span> <span class="fl">0.5</span>)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb9-12"><a href="acceso.html#cb9-12"></a><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">breaks =</span> currency<span class="op">$</span>date[<span class="kw">seq</span>(<span class="dv">1</span>, <span class="kw">length</span>(currency<span class="op">$</span>date), <span class="dt">by =</span> <span class="dv">2</span>)])<span class="op">+</span></span>
+<span id="cb9-13"><a href="acceso.html#cb9-13"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">limits =</span> <span class="kw">c</span>(<span class="dv">500000</span>, <span class="dv">2000000</span>), </span>
+<span id="cb9-14"><a href="acceso.html#cb9-14"></a>                     <span class="dt">labels =</span> scales<span class="op">::</span>dollar) <span class="op">+</span></span>
+<span id="cb9-15"><a href="acceso.html#cb9-15"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Currency in Circulation&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning: Removed 1 row(s) containing missing values (geom_path).</code></pre>
+<p><img src="Guide_Haver_Analytics_files/figure-html/consulta_en_R-1.png" width="672" /></p>
+<p>Para acceder a la guía completa del paquete <code>Haver</code> en R puedes:</p>
+<ul>
+<li><p>correr el siguiente comando en RStudio: <code>help("Haver")</code>, o</p></li>
+<li><p>ingresar a la página oficial de <a href="http://www.haver.com">Haver Analytics</a>, dar click en <em>Client area</em> donde te pedirán un código de usuario el cual te lo pueden dar a través del correo <a href="mailto:data@haver.com" class="email">data@haver.com</a>, seleccionar <em>Resources</em>, después ingresar en <em>Using DLX Data with Third Party Statistical Software</em>, y selecionar la <strong>guía de usuario para R</strong> <span class="citation">(Haver Analytics <a href="#ref-haver_r" role="doc-biblioref">2018</a>)</span>.</p></li>
+</ul>
+</div>
+<div id="consulta-con-python" class="section level2">
+<h2><span class="header-section-number">3.4</span> Consulta con Python</h2>
+<p>El primer paso es instalar el paquete de Haver en Python, lo cual se puede relaizar de la siguiente manera:<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+<ul>
+<li><strong>interfaz</strong>: desde PowerShell/Terminal, correr el siguiente comando:</li>
+</ul>
+<pre><code>pip install Haver --extra-index-url https://urldefense.proofpoint.com/v2/url?u=http-3A__www.haver.com_Python&amp;d=DwIGAg&amp;c=AKs6EwELrBZKOG9H-C2eL9nCFyT6KLG5z2zMuwOnNTA&amp;r=1xye9t3tMb09G6CmueM5cDX4CvWN9LC-lHqLRumN6Ls&amp;m=OzpuOY3Klwky0-MpBXHqoFFIN7cUKTHg3FHaKc18LaY&amp;s=yWr_0mX3wkhn60y5OE2ZDv2Hb-rIrBaVzLVAmE0ghkA&amp;e=  --trusted-host https://urldefense.proofpoint.com/v2/url?u=http-3A__www.haver.com&amp;d=DwIGAg&amp;c=AKs6EwELrBZKOG9H-C2eL9nCFyT6KLG5z2zMuwOnNTA&amp;r=1xye9t3tMb09G6CmueM5cDX4CvWN9LC-lHqLRumN6Ls&amp;m=OzpuOY3Klwky0-MpBXHqoFFIN7cUKTHg3FHaKc18LaY&amp;s=KJOUUR_knntVVk2lyRqTBi8i7JLK_cfqqjh5Kcu1ReE&amp;e=</code></pre>
+<p>…si esto no funciona, se tiene que realizar una instalación manual.</p>
+<ul>
+<li><strong>manual</strong>:
+<ol style="list-style-type: decimal">
+<li>ingresar a la página <a href="http://www.haver.com/Python/Haver/" class="uri">http://www.haver.com/Python/Haver/</a>,</li>
+<li>descargar el archivo de formato <code>wheel</code>, con extensión ‘whl’, que corresponda a la versión que tengas instalada de Python. Por ejemplo, el archivo <code>Haver-1.1.0-cp35-cp35mwin_amd64.whl</code> corresponde a la versión instalada de Python 3.5</li>
+<li>Desde PowerShell/Terminal, ir a la carpeta donde se encuentre el archivo descargado en el punto anterior y correr el siguiente comando reemplazando ‘archivo_wheel’ por el nombre del archivo descargado</li>
+</ol></li>
+</ul>
+<pre><code>pip install archivo_wheel.whl</code></pre>
+<p>Ya instalado el paquete de Haver en Python, podemos empezar a trabajar ya sea directamente con Python o a través de alguna de sus interfaces (Jupyter Lab, Jupyter Notebook, Spider). Lo primero que tenemos que hacer es llamar las librerías y fijar la ruta a las bases de datos con los siguientes comandos:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="acceso.html#cb13-1"></a><span class="co"># llamar librerias de Python</span></span>
+<span id="cb13-2"><a href="acceso.html#cb13-2"></a><span class="im">import</span> Haver <span class="im">as</span> hv</span>
+<span id="cb13-3"><a href="acceso.html#cb13-3"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb13-4"><a href="acceso.html#cb13-4"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb13-5"><a href="acceso.html#cb13-5"></a><span class="im">import</span> altair <span class="im">as</span> alt</span>
+<span id="cb13-6"><a href="acceso.html#cb13-6"></a></span>
+<span id="cb13-7"><a href="acceso.html#cb13-7"></a><span class="co"># fijar la ruta de haver</span></span>
+<span id="cb13-8"><a href="acceso.html#cb13-8"></a>hv.path()</span></code></pre></div>
+<pre><code>## &#39;\\\\bmapps\\Bases de Informacion\\dlx\\data\\&#39;</code></pre>
+<p>Posteriormente hay que llamar a las series que nos interesen, y su metadata, las cuales se pueden graficar o manipular.</p>
+<pre><code># ejemplo de consulta de serie
+currency = hv.data(codes=[&quot;c273fmce&quot;], database=&quot;EMERGELA&quot;, 
+                   frequency=&quot;q&quot;, startdate=&quot;2010-01-01&quot;)
+
+# cambio de nombre
+currency = currency.reset_index().dropna().rename(columns = {&quot;index&quot;: &quot;fecha&quot;, &quot;c273fmce&quot;:&quot;Currency_in_Circulation&quot;})
+currency.fecha = [str(i) for i in currency.fecha]
+
+# obtener metadata
+currency_md = hv.metadata(codes=[&quot;c273fmce&quot;], database=&quot;EMERGELA&quot;).T
+
+# graficar
+alt.Chart(currency).mark_line(color=&quot;darkred&quot;).encode(
+    x=alt.X(&#39;fecha&#39;, title=&quot;Date&quot;),
+    y=alt.Y(&#39;Currency_in_Circulation:Q&#39;, title=&quot;Currency in Circulation&quot;),
+    tooltip=[&#39;fecha&#39;, &#39;Currency_in_Circulation&#39;]
+).properties(
+    width=500
+)</code></pre>
+<p><img src="_img/python_plot.png" /></p>
+<p>Para acceder a la guía completa del paquete <code>Haver</code> en Python puedes:</p>
+<ul>
+<li>ingresar a la página oficial de <a href="http://www.haver.com">Haver Analytics</a>, dar click en <em>Client area</em> donde te pedirán un código de usuario el cual te lo pueden dar a través del correo <a href="mailto:data@haver.com" class="email">data@haver.com</a>, seleccionar <em>Resources</em>, después ingresar en <em>Using DLX Data with Third Party Statistical Software</em>, y selecionar la <strong>guía de usuario para Python</strong> <span class="citation">(Haver Analytics <a href="#ref-haver_python" role="doc-biblioref">2020</a>)</span>.</li>
+</ul>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-haver_r">
+<p>Haver Analytics. 2018. “Package ’Haver’. Access Haver Analytics Databases from R.” Haver Analytics. <a href="http://www.haver.com/clientarea/docs/Haver_R_2.4_userguide.pdf/">http://www.haver.com/clientarea/docs/Haver_R_2.4_userguide.pdf/</a>.</p>
+</div>
+<div id="ref-haver_python">
+<p>Haver Analytics. 2020. “Haver Python Reference.” Haver Analytics. <a href="http://www.haver.com/clientarea/docs/Haver_Python_Reference_Guide.pdf/">http://www.haver.com/clientarea/docs/Haver_Python_Reference_Guide.pdf/</a>.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p>Basado en script para uso de Haver por primera vez, compartido por <span class="citation">Mateo Echeverri (<a href="#ref-haver_python_install" role="doc-biblioref">2019</a>)</span> de Haver Analytics.<a href="acceso.html#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="prereq.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="series.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Guide_Haver_Analytics.pdf", "Guide_Haver_Analytics.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

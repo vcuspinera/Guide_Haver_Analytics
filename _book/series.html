@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Parte 4 Series | Guía para usar Haver Analytics</title>
+  <meta name="description" content="Parte 4 Series | Guía para usar Haver Analytics, enfocándose en las series relacionadas con el dinero en efectivo y herramientas que podrían ser útiles a la Oficina de Estadística de la Dirección General de Emisión del Banco de México." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Parte 4 Series | Guía para usar Haver Analytics" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Parte 4 Series | Guía para usar Haver Analytics, enfocándose en las series relacionadas con el dinero en efectivo y herramientas que podrían ser útiles a la Oficina de Estadística de la Dirección General de Emisión del Banco de México." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Parte 4 Series | Guía para usar Haver Analytics" />
+  
+  <meta name="twitter:description" content="Parte 4 Series | Guía para usar Haver Analytics, enfocándose en las series relacionadas con el dinero en efectivo y herramientas que podrían ser útiles a la Oficina de Estadística de la Dirección General de Emisión del Banco de México." />
+  
+
+<meta name="author" content="Victor Cuspinera" />
+
+
+<meta name="date" content="2020-11-25" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="acceso.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Guía para usar Haver Analytics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#salvedad-de-uso"><i class="fa fa-check"></i><b>1.1</b> Salvedad de uso</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="prereq.html"><a href="prereq.html"><i class="fa fa-check"></i><b>2</b> Prerequisitos</a><ul>
+<li class="chapter" data-level="2.1" data-path="prereq.html"><a href="prereq.html#instalación-del-software"><i class="fa fa-check"></i><b>2.1</b> Instalación del software</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="acceso.html"><a href="acceso.html"><i class="fa fa-check"></i><b>3</b> Acceso</a><ul>
+<li class="chapter" data-level="3.1" data-path="acceso.html"><a href="acceso.html#aplicación-dlx"><i class="fa fa-check"></i><b>3.1</b> Aplicación DLX</a></li>
+<li class="chapter" data-level="3.2" data-path="acceso.html"><a href="acceso.html#add-in-para-excel"><i class="fa fa-check"></i><b>3.2</b> Add-in para Excel</a></li>
+<li class="chapter" data-level="3.3" data-path="acceso.html"><a href="acceso.html#consulta-con-r"><i class="fa fa-check"></i><b>3.3</b> Consulta con R</a></li>
+<li class="chapter" data-level="3.4" data-path="acceso.html"><a href="acceso.html#consulta-con-python"><i class="fa fa-check"></i><b>3.4</b> Consulta con Python</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="series.html"><a href="series.html"><i class="fa fa-check"></i><b>4</b> Series</a><ul>
+<li class="chapter" data-level="4.1" data-path="series.html"><a href="series.html#bases-de-datos"><i class="fa fa-check"></i><b>4.1</b> Bases de datos</a></li>
+<li class="chapter" data-level="4.2" data-path="series.html"><a href="series.html#código-de-series"><i class="fa fa-check"></i><b>4.2</b> Código de Series</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Guía para usar Haver Analytics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="series" class="section level1">
+<h1><span class="header-section-number">Parte 4</span> Series</h1>
+<p>Como se mencionó en la introducción, el Banco tiene contratado una subscripción a algunas de las bases de datos de esta empresa, las cuales contienen diversas series.</p>
+<p><a href="http://webinterno/centro-de-informacion-electronica/acceso-a-recursos-electronicos/bases-de-datos-con-informacion-estadistica/haver-analytics-global/haver-analytics-global--.html">En este link</a> podrás para revisar las bases de datos contratadas por Banxico a Haver Analytics.</p>
+<p>Es importante mencionar que aunque algunas serie se encuentran replicadas en bases de datos distintas, estas pueden tener algunas pequeñas modificaciones para ajustarse a la periodicidad o formato de las otras series de la base de datos.</p>
+<div id="bases-de-datos" class="section level2">
+<h2><span class="header-section-number">4.1</span> Bases de datos</h2>
+<p>En el siguiente cuadro se muestran las 29 bases de datos contratadas por Banxico, junto con su descripción y número de series.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+<table>
+<colgroup>
+<col width="22%" />
+<col width="13%" />
+<col width="29%" />
+<col width="34%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Database</th>
+<th align="left">Group</th>
+<th align="left">Description</th>
+<th align="right">No. de series</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">USECON</td>
+<td align="left">U.S. Detail</td>
+<td align="left">United States Economic Statistics</td>
+<td align="right">63,934</td>
+</tr>
+<tr class="even">
+<td align="left">SURVEYS</td>
+<td align="left">U.S. Detail</td>
+<td align="left">Surveys Including FED Special Series</td>
+<td align="right">68,888</td>
+</tr>
+<tr class="odd">
+<td align="left">SURVEYW</td>
+<td align="left">U.S. Detail</td>
+<td align="left">Weekly Surveys of Economic Activity</td>
+<td align="right">32,164</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="right"></td>
+</tr>
+<tr class="odd">
+<td align="left">GLSECTOR</td>
+<td align="left">Industry Detail</td>
+<td align="left">Global Sector Statistics</td>
+<td align="right">277,412</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="right"></td>
+</tr>
+<tr class="odd">
+<td align="left">WARDSINT</td>
+<td align="left">Automotive Detail</td>
+<td align="left">Global, Ward’s Automotive Data</td>
+<td align="right">528</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="right"></td>
+</tr>
+<tr class="odd">
+<td align="left">G10</td>
+<td align="left">Advance Ecopnomies</td>
+<td align="left">Country Summary Statistics</td>
+<td align="right">17,968</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="right"></td>
+</tr>
+<tr class="odd">
+<td align="left">EMERGE</td>
+<td align="left">Emerging Markets</td>
+<td align="left">Country Summary Statistics</td>
+<td align="right">42,103</td>
+</tr>
+<tr class="even">
+<td align="left">EMERGELA</td>
+<td align="left">Emerging Markets</td>
+<td align="left">Latin America</td>
+<td align="right">70,705</td>
+</tr>
+<tr class="odd">
+<td align="left">EMERGEPR</td>
+<td align="left">Emerging Markets</td>
+<td align="left">Asia Pacific</td>
+<td align="right">256,779</td>
+</tr>
+<tr class="even">
+<td align="left">EMERGECW</td>
+<td align="left">Emerging Markets</td>
+<td align="left">Central, Eastern Europe &amp; Western Asia</td>
+<td align="right">252,574</td>
+</tr>
+<tr class="odd">
+<td align="left">EMERGEMA</td>
+<td align="left">Emerging Markets</td>
+<td align="left">Middle East &amp; Africa</td>
+<td align="right">152,190</td>
+</tr>
+<tr class="even">
+<td align="left">CHINA</td>
+<td align="left">Emerging Markets</td>
+<td align="left">CEIC Premium China Database</td>
+<td align="right">377,004</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="right"></td>
+</tr>
+<tr class="even">
+<td align="left">EIUIAMER</td>
+<td align="left">EIU Market Indicators</td>
+<td align="left">Americas</td>
+<td align="right">4,948</td>
+</tr>
+<tr class="odd">
+<td align="left">EIUIASIA</td>
+<td align="left">EIU Market Indicators</td>
+<td align="left">Asia &amp; Australasia</td>
+<td align="right">6,957</td>
+</tr>
+<tr class="even">
+<td align="left">EIUIEEUR</td>
+<td align="left">EIU Market Indicators</td>
+<td align="left">Eastern Europe</td>
+<td align="right">4,406</td>
+</tr>
+<tr class="odd">
+<td align="left">EIUIWEUR</td>
+<td align="left">EIU Market Indicators</td>
+<td align="left">Western Europe</td>
+<td align="right">7,543</td>
+</tr>
+<tr class="even">
+<td align="left">EIUIMENA</td>
+<td align="left">EIU Market Indicators</td>
+<td align="left">Middle East &amp; North Africa</td>
+<td align="right">2,534</td>
+</tr>
+<tr class="odd">
+<td align="left">EIUISUBS</td>
+<td align="left">EIU Market Indicators</td>
+<td align="left">Sub-Saharan Africa</td>
+<td align="right">1,,381</td>
+</tr>
+<tr class="even">
+<td align="left">EIUIREGS</td>
+<td align="left">EIU Market Indicators</td>
+<td align="left">World &amp; Regional Aggregates</td>
+<td align="right">4,170</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="right"></td>
+</tr>
+<tr class="even">
+<td align="left">IIFDATA</td>
+<td align="left">Institute of International Finance Forecasts</td>
+<td align="left">IIF Forecasts</td>
+<td align="right">16,161</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="right"></td>
+</tr>
+<tr class="even">
+<td align="left">FELATA</td>
+<td align="left">Focuseconomics Consensus Forecasts</td>
+<td align="left">Latin &amp; Central America</td>
+<td align="right">7,703</td>
+</tr>
+<tr class="odd">
+<td align="left">FEAANZ</td>
+<td align="left">Focuseconomics Consensus Forecasts</td>
+<td align="left">Asia &amp; Australia/New Zealand</td>
+<td align="right">8,069</td>
+</tr>
+<tr class="even">
+<td align="left">FEMAJR</td>
+<td align="left">Focuseconomics Consensus Forecasts</td>
+<td align="left">Major Economies &amp; Euro Area</td>
+<td align="right">13,114</td>
+</tr>
+<tr class="odd">
+<td align="left">FEEEUR</td>
+<td align="left">Focuseconomics Consensus Forecasts</td>
+<td align="left">Eastern Europe</td>
+<td align="right">8,465</td>
+</tr>
+<tr class="even">
+<td align="left">FELATAH</td>
+<td align="left">Focuseconomics Consensus Forecasts</td>
+<td align="left">Latin &amp; Central America: Historical</td>
+<td align="right">39,000</td>
+</tr>
+<tr class="odd">
+<td align="left">FEAANZH</td>
+<td align="left">Focuseconomics Consensus Forecasts</td>
+<td align="left">Asia &amp; Australia/New Zealand: Historical</td>
+<td align="right">45,970</td>
+</tr>
+<tr class="even">
+<td align="left">FEMAJRH</td>
+<td align="left">Focuseconomics Consensus Forecasts</td>
+<td align="left">Major Economies &amp; Euro Area: Historical</td>
+<td align="right">67,304</td>
+</tr>
+<tr class="odd">
+<td align="left">FEEEURH</td>
+<td align="left">Focuseconomics Consensus Forecasts</td>
+<td align="left">Eastern Europe: Historical</td>
+<td align="right">48,610</td>
+</tr>
+<tr class="even">
+<td align="left">FXRATES</td>
+<td align="left">Focuseconomics Consensus Forecasts</td>
+<td align="left">Currency Conversion Database</td>
+<td align="right">391</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="código-de-series" class="section level2">
+<h2><span class="header-section-number">4.2</span> Código de Series</h2>
+<p>Las <strong>series</strong> disponibles se pueden consultar de la siguiente forma:</p>
+<ul>
+<li>Navegando en el <em>Directorio de Series</em> directamente en la aplicación DLX o en el add-in de Haver para Excel.</li>
+<li>Consultar las series de una base de datos en particular a través de Python:</li>
+</ul>
+<pre><code>import Haver
+Haver.metadata(database=&#39;database_code&#39;)</code></pre>
+<p>El código completo de una serie se divide en 4 partes. Por ejemplo, el nombre completo de la serie de Dinero en Circulación es <code>C273FMCE@EMERGELA</code>, y se divide de la siguiente forma:</p>
+<table>
+<thead>
+<tr class="header">
+<th>C</th>
+<th>273</th>
+<th>FMCE</th>
+<th>@EMERGELA</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>tipo de ajuste</td>
+<td>país</td>
+<td>tema de la serie</td>
+<td>base de datos</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>Algunas series que nos podrían ser de utilidad:</p>
+<table>
+<colgroup>
+<col width="22%" />
+<col width="33%" />
+<col width="44%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Serie</th>
+<th align="left">Database</th>
+<th align="left">Descripción (en Inglés)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">C273FMCE</td>
+<td align="left">EMERGELA</td>
+<td align="left">Mexico: Monetary Aggregates: Currency in Circulation (EOP, NSA, Mil.NewPesos)</td>
+</tr>
+<tr class="even">
+<td align="left">C273XLDE</td>
+<td align="left">EMERGELA</td>
+<td align="left">Mexico: Exchange Rate (EOP, NewPeso/US$)</td>
+</tr>
+<tr class="odd">
+<td align="left">N273XEUE</td>
+<td align="left">EMERGELA</td>
+<td align="left">Mexico: BoM Euro Exchange Rate (EOP, Peso/Euro)</td>
+</tr>
+<tr class="even">
+<td align="left">N273XUKE</td>
+<td align="left">EMERGELA</td>
+<td align="left">Mexico: BoM UK Pound Sterling Exchange Rate (EOP, Peso/GBP)</td>
+</tr>
+<tr class="odd">
+<td align="left">N273NGDP</td>
+<td align="left">EMERGELA</td>
+<td align="left">Mexico: Gross Domestic Product at Market Prices (NSAAR, Mil.NewPesos)</td>
+</tr>
+<tr class="even">
+<td align="left">N273NGPC</td>
+<td align="left">EMERGELA</td>
+<td align="left">Mexico: Gross Domestic Product at Market Prices (NSAAR, Mil.2013.NewPesos)</td>
+</tr>
+<tr class="odd">
+<td align="left">N273PJ</td>
+<td align="left">EMERGELA</td>
+<td align="left">Mexico: Consumer Price Index (NSA, Jul 16-31 2018=100)</td>
+</tr>
+<tr class="even">
+<td align="left">N273EWUN</td>
+<td align="left">EMERGELA</td>
+<td align="left">Mexico: Minimum Wage: National (NSA, MXP/Day)</td>
+</tr>
+<tr class="odd">
+<td align="left">N273POP</td>
+<td align="left">EMERGELA</td>
+<td align="left">Mexico: Population (Persons)</td>
+</tr>
+<tr class="even">
+<td align="left">N273TAUS</td>
+<td align="left">EMERGELA</td>
+<td align="left">Mexico: Tourist Arrivals by Air from United States (NSA, Persons)</td>
+</tr>
+<tr class="odd">
+<td align="left">N273TACA</td>
+<td align="left">EMERGELA</td>
+<td align="left">Mexico: Tourist Arrivals by Air from Canada (NSA, Persons)</td>
+</tr>
+<tr class="even">
+<td align="left">N111FMC</td>
+<td align="left">G10</td>
+<td align="left">U.S.: Money Supply: Currency (NSA, Bil.$)</td>
+</tr>
+<tr class="odd">
+<td align="left">H111FMR</td>
+<td align="left">G10</td>
+<td align="left">U.S.: Monetary Base (SA, Bil.$)</td>
+</tr>
+<tr class="even">
+<td align="left">N023FMC</td>
+<td align="left">G10</td>
+<td align="left">EA 11-19: MFIs: Liab: Currency in Circulation (EOP, NSA, Bil.EUR)</td>
+</tr>
+<tr class="odd">
+<td align="left">N023FMR</td>
+<td align="left">G10</td>
+<td align="left">EA 11-19: Monetary Base (EOP, NSA, Bil.EUR)</td>
+</tr>
+<tr class="even">
+<td align="left">A273NETS</td>
+<td align="left">EIUIAMOER</td>
+<td align="left">Mexico: Internet Users (Thous)</td>
+</tr>
+<tr class="odd">
+<td align="left">A273ATPT</td>
+<td align="left">EIUIAMOER</td>
+<td align="left">Mexico: Air Transport: Passengers (Thous)</td>
+</tr>
+</tbody>
+</table>
+<p>Estas son algunas de las series que podrían ser útiles para el área; existen series similares a estas para un gran número de países lo cuál hace fácil su comparación.</p>
+<p>Se recomienda revisar las series disponibles pues hay cerca de 1.9 millones de series en las 29 bases de datos contratadas por Banxico a Haver Analytics.</p>
+
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p>Información consultada el 2020-11-24 en DLX y a través de Python.<a href="series.html#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="acceso.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Guide_Haver_Analytics.pdf", "Guide_Haver_Analytics.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

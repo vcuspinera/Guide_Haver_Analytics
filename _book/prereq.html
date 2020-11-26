@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Parte 2 Prerequisitos | Guía para usar Haver Analytics</title>
+  <meta name="description" content="Parte 2 Prerequisitos | Guía para usar Haver Analytics, enfocándose en las series relacionadas con el dinero en efectivo y herramientas que podrían ser útiles a la Oficina de Estadística de la Dirección General de Emisión del Banco de México." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Parte 2 Prerequisitos | Guía para usar Haver Analytics" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Parte 2 Prerequisitos | Guía para usar Haver Analytics, enfocándose en las series relacionadas con el dinero en efectivo y herramientas que podrían ser útiles a la Oficina de Estadística de la Dirección General de Emisión del Banco de México." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Parte 2 Prerequisitos | Guía para usar Haver Analytics" />
+  
+  <meta name="twitter:description" content="Parte 2 Prerequisitos | Guía para usar Haver Analytics, enfocándose en las series relacionadas con el dinero en efectivo y herramientas que podrían ser útiles a la Oficina de Estadística de la Dirección General de Emisión del Banco de México." />
+  
+
+<meta name="author" content="Victor Cuspinera" />
+
+
+<meta name="date" content="2020-11-25" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="acceso.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Guía para usar Haver Analytics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#salvedad-de-uso"><i class="fa fa-check"></i><b>1.1</b> Salvedad de uso</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="prereq.html"><a href="prereq.html"><i class="fa fa-check"></i><b>2</b> Prerequisitos</a><ul>
+<li class="chapter" data-level="2.1" data-path="prereq.html"><a href="prereq.html#instalación-del-software"><i class="fa fa-check"></i><b>2.1</b> Instalación del software</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="acceso.html"><a href="acceso.html"><i class="fa fa-check"></i><b>3</b> Acceso</a><ul>
+<li class="chapter" data-level="3.1" data-path="acceso.html"><a href="acceso.html#aplicación-dlx"><i class="fa fa-check"></i><b>3.1</b> Aplicación DLX</a></li>
+<li class="chapter" data-level="3.2" data-path="acceso.html"><a href="acceso.html#add-in-para-excel"><i class="fa fa-check"></i><b>3.2</b> Add-in para Excel</a></li>
+<li class="chapter" data-level="3.3" data-path="acceso.html"><a href="acceso.html#consulta-con-r"><i class="fa fa-check"></i><b>3.3</b> Consulta con R</a></li>
+<li class="chapter" data-level="3.4" data-path="acceso.html"><a href="acceso.html#consulta-con-python"><i class="fa fa-check"></i><b>3.4</b> Consulta con Python</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="series.html"><a href="series.html"><i class="fa fa-check"></i><b>4</b> Series</a><ul>
+<li class="chapter" data-level="4.1" data-path="series.html"><a href="series.html#bases-de-datos"><i class="fa fa-check"></i><b>4.1</b> Bases de datos</a></li>
+<li class="chapter" data-level="4.2" data-path="series.html"><a href="series.html#código-de-series"><i class="fa fa-check"></i><b>4.2</b> Código de Series</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Guía para usar Haver Analytics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="prereq" class="section level1">
+<h1><span class="header-section-number">Parte 2</span> Prerequisitos</h1>
+<div id="instalación-del-software" class="section level2">
+<h2><span class="header-section-number">2.1</span> Instalación del software</h2>
+<p>Para poder usar Haver Analytics es necesario solicitar la instalación del paquete <strong>DLX 7.00.000</strong>, el cual es una <em>“aplicación DLXVG3 diseñada para explotar la información de las series de tiempo de Haver Analytics”</em>.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p><strong>¿No sabes cómo solicitar la instalación?</strong><br />
+Ingresa al <a href="http://webinterno">webinterno</a>, y sigue la siguinte ruta:</p>
+<blockquote>
+<p>&gt; <em>Webinterno<br />
+ &gt; Tecnologías de la información<br />
+  &gt; Certificación y distribución de software<br />
+    &gt; Solicitudes<br />
+     &gt; Instalación/desinstalación de software (Varios paquetes en una ETB)</em></p>
+</blockquote>
+<p>Aquí encontrarás un formato que llenarás para solicitar la instalación del paquete <strong>DLX 7.00.000</strong>; posteriormente, una persona de la <em>Oficina de Cómputo Personal</em> te contactará para realizar la instalación del paquete en tu equipo de cómputo.</p>
+<p>Es importante solicitar el complemento (add-in) de este paquete para Excel al momento de la instalación.</p>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Descripción en el <em>Catálogo de Software</em> de Banxico.<a href="prereq.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="acceso.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Guide_Haver_Analytics.pdf", "Guide_Haver_Analytics.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
