@@ -8,6 +8,8 @@ bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
 description: "Guía para usar Haver Analytics, enfocándose en las series relacionadas con el dinero en efectivo y herramientas que podrían ser útiles a la Oficina de Estadística de la Dirección General de Emisión del Banco de México."
+github-repo: "vcuspinera/Guide_Haver_Analytics"
+cover-image: "images/cover.png"
 ---
 
 # Introducción {#intro}
