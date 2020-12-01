@@ -61,8 +61,8 @@ Haver.metadata(database='database_code')
 
 El código completo de una serie se divide en 4 partes. Por ejemplo, el nombre completo de la serie de Dinero en Circulación es `C273FMCE@EMERGELA`, y se divide de la siguiente forma:
 
-| C | 273 | FMCE | \@EMERGELA |
-|---|-----|------|------------|
+| C  | 273 | FMCE | \@EMERGELA |
+|:--:|:---:|:----:|:----------:|
 |tipo de ajuste| país | tema de la serie | base de datos | 
 
 <br>
@@ -70,7 +70,7 @@ El código completo de una serie se divide en 4 partes. Por ejemplo, el nombre c
 Algunas series que nos podrían ser de utilidad:
 
 |Serie |Database |Descripción (en Inglés) |
-|:-----|:--------|:-----------|
+|:----:|:-------:|:-----------|
 |C273FMCE | EMERGELA |  Mexico: Monetary Aggregates: Currency in Circulation (EOP, NSA, Mil.NewPesos)|
 |C273XLDE | EMERGELA | Mexico: Exchange Rate (EOP, NewPeso/US\$)|
 |N273XEUE | EMERGELA | Mexico: BoM Euro Exchange Rate (EOP, Peso/Euro)|

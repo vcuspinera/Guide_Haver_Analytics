@@ -14,9 +14,9 @@ cover-image: "images/cover.png"
 
 # Introducción {#intro}
 
-@haver es una empresa que se encarga de coleccionar información económica, financiera y monetaria, a nivel global de distintas fuentes oficiales. 
+Haver Analytics es una empresa que se encarga de coleccionar información económica, financiera y monetaria, a nivel global de distintas fuentes oficiales. 
 
-El @haver_banxico tiene contratado una subscripción a algunas de las bases de datos de esta empresa, por lo que cualquier trabajador del banco puede solicitar el acceso a esta información sin incurrir en costo adicional alguno.
+El Banco de México tiene contratado una subscripción a algunas de las bases de datos de esta empresa, por lo que cualquier trabajador del banco puede solicitar el acceso a esta información sin incurrir en costo adicional alguno. [@haver_banxico]
 
 Algunas de las bases que se tienen contratadas son:
 
