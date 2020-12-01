@@ -24,7 +24,7 @@
 <meta name="author" content="Victor Cuspinera" />
 
 
-<meta name="date" content="2020-11-25" />
+<meta name="date" content="2020-11-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -248,7 +248,7 @@ Figure 3.3: DLX add-in para Excel.
 ## 
 ##   # of series records : 1
 ##   database path       : \\bmapps\Bases de Informacion\DLX\DATA\
-##   query date and time : 2020-11-25 12:27:35</code></pre>
+##   query date and time : 2020-11-30 22:53:09</code></pre>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="acceso.html#cb9-1"></a><span class="co"># convertir serie a data.frame</span></span>
 <span id="cb9-2"><a href="acceso.html#cb9-2"></a>currency &lt;-<span class="st"> </span><span class="kw">data.frame</span>(currency)</span>
 <span id="cb9-3"><a href="acceso.html#cb9-3"></a>currency<span class="op">$</span>date &lt;-<span class="st"> </span><span class="kw">row.names</span>(currency)</span>
@@ -322,7 +322,7 @@ alt.Chart(currency).mark_line(color=&quot;darkred&quot;).encode(
 <p><img src="_img/python_plot.png" /></p>
 <p>Para acceder a la guía completa del paquete <code>Haver</code> en Python puedes:</p>
 <ul>
-<li>ingresar a la página oficial de <a href="http://www.haver.com">Haver Analytics</a>, dar click en <em>Client area</em> donde te pedirán un código de usuario el cual te lo pueden dar a través del correo <a href="mailto:data@haver.com" class="email">data@haver.com</a>, seleccionar <em>Resources</em>, después ingresar en <em>Using DLX Data with Third Party Statistical Software</em>, y selecionar la <strong>guía de usuario para Python</strong> <span class="citation">(Haver Analytics <a href="#ref-haver_python" role="doc-biblioref">2020</a>)</span>.</li>
+<li>ingresar a la página oficial de <a href="http://www.haver.com">Haver Analytics</a>, dar click en <em>Client area</em> donde te pedirán un código de usuario el cual te lo pueden dar a través del correo <a href="mailto:data@haver.com" class="email">data@haver.com</a>, seleccionar <em>Resources</em>, después ingresar en <em>Using DLX Data with Third Party Statistical Software</em>, y selecionar la <strong>guía de usuario para Python</strong> <span class="citation">(Haver Analytics <a href="#ref-haver_python" role="doc-biblioref">2020</a><a href="#ref-haver_python" role="doc-biblioref">a</a>)</span>.</li>
 </ul>
 
 </div>
@@ -333,7 +333,7 @@ alt.Chart(currency).mark_line(color=&quot;darkred&quot;).encode(
 <p>Haver Analytics. 2018. “Package ’Haver’. Access Haver Analytics Databases from R.” Haver Analytics. <a href="http://www.haver.com/clientarea/docs/Haver_R_2.4_userguide.pdf/">http://www.haver.com/clientarea/docs/Haver_R_2.4_userguide.pdf/</a>.</p>
 </div>
 <div id="ref-haver_python">
-<p>Haver Analytics. 2020. “Haver Python Reference.” Haver Analytics. <a href="http://www.haver.com/clientarea/docs/Haver_Python_Reference_Guide.pdf/">http://www.haver.com/clientarea/docs/Haver_Python_Reference_Guide.pdf/</a>.</p>
+<p>Haver Analytics. 2020a. “Haver Python Reference.” Haver Analytics. <a href="http://www.haver.com/clientarea/docs/Haver_Python_Reference_Guide.pdf/">http://www.haver.com/clientarea/docs/Haver_Python_Reference_Guide.pdf/</a>.</p>
 </div>
 </div>
 <div class="footnotes">

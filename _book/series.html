@@ -24,7 +24,7 @@
 <meta name="author" content="Victor Cuspinera" />
 
 
-<meta name="date" content="2020-11-25" />
+<meta name="date" content="2020-11-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -55,6 +55,70 @@
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -115,7 +179,7 @@
 <p>Es importante mencionar que aunque algunas serie se encuentran replicadas en bases de datos distintas, estas pueden tener algunas pequeñas modificaciones para ajustarse a la periodicidad o formato de las otras series de la base de datos.</p>
 <div id="bases-de-datos" class="section level2">
 <h2><span class="header-section-number">4.1</span> Bases de datos</h2>
-<p>En el siguiente cuadro se muestran las 29 bases de datos contratadas por Banxico, junto con su descripción y número de series.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+<p>En el siguiente cuadro se muestran las 29 bases de datos contratadas por Banxico, junto con su descripción y número de series.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
 <table>
 <colgroup>
 <col width="22%" />
@@ -485,8 +549,26 @@ Haver.metadata(database=&#39;database_code&#39;)</code></pre>
 <p>Estas son algunas de las series que podrían ser útiles para el área; existen series similares a estas para un gran número de países lo cuál hace fácil su comparación.</p>
 <p>Se recomienda revisar las series disponibles pues hay cerca de 1.9 millones de series en las 29 bases de datos contratadas por Banxico a Haver Analytics.</p>
 
+<div id="refs" class="references">
+<div>
+<p>Banco de México. 2020. “Bases de Datos de Haver Analytics Contratadas Por Banxico.” 2020. <a href="http://webinterno/centro-de-informacion-electronica/acceso-a-recursos-electronicos/bases-de-datos-con-informacion-estadistica/haver-analytics-global/haver-analytics-global--.html/">http://webinterno/centro-de-informacion-electronica/acceso-a-recursos-electronicos/bases-de-datos-con-informacion-estadistica/haver-analytics-global/haver-analytics-global--.html/</a>.</p>
+</div>
+<div>
+<p>Haver Analytics. 2018. “Package ’Haver’. Access Haver Analytics Databases from R.” Haver Analytics. <a href="http://www.haver.com/clientarea/docs/Haver_R_2.4_userguide.pdf/">http://www.haver.com/clientarea/docs/Haver_R_2.4_userguide.pdf/</a>.</p>
+</div>
+<div>
+<p>———. 2020a. “Haver Python Reference.” Haver Analytics. <a href="http://www.haver.com/clientarea/docs/Haver_Python_Reference_Guide.pdf/">http://www.haver.com/clientarea/docs/Haver_Python_Reference_Guide.pdf/</a>.</p>
+</div>
+<div>
+<p>———. 2020b. 2020. <a href="http://www.haver.com">http://www.haver.com</a>.</p>
+</div>
+<div>
+<p>Mateo Echeverri. 2019. “Script to Set-up to for First Time Package Install in Python.” Haver Analytics.</p>
 </div>
 </div>
+</div>
+</div>
+
 
 
 
@@ -496,8 +578,8 @@ Haver.metadata(database=&#39;database_code&#39;)</code></pre>
 
 <div class="footnotes">
 <hr />
-<ol start="2">
-<li id="fn2"><p>Información consultada el 2020-11-24 en DLX y a través de Python.<a href="series.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<ol start="3">
+<li id="fn3"><p>Información consultada el 2020-11-24 en DLX y a través de Python.<a href="series.html#fnref3" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
