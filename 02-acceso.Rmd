@@ -16,6 +16,8 @@ En esta aplicación se pueden seleccionar las series de interés, ver su gráfic
 knitr::include_graphics("_img/dlx_app.png")
 ```
 
+Tip: la _tabla de datos_ presenta la información en formato utilizado por el programa de Haver, el cual recomiendo cambiar a formato de columna para visualizar una serie en cada columna. Para hacer este cambio hay que dar click derecho sobre la tabla y seleccionar "column mode".
+
 ## Add-in para Excel
 
 Las series de Haver Analytics se pueden consultar directamente desde Excel utilizando el _add-in_ DLX. Para verificar si se tiene instalado este complemento, en Excel deberías tener una pestaña que diga __DLX__. 
@@ -86,7 +88,7 @@ Para acceder a la guía completa del paquete `Haver` en R puedes:
 
 - correr el siguiente comando en RStudio: `help("Haver")`, o
 
-- ingresar a la página oficial de [Haver Analytics](http://www.haver.com), dar click en _Client area_ donde te pedirán un código de usuario el cual te lo pueden dar a través del correo <data@haver.com>, seleccionar _Resources_, después ingresar en _Using DLX Data with Third Party Statistical Software_, y selecionar la __guía de usuario para R__ [@haver_r].
+- ingresar a la página oficial de [Haver Analytics](http://www.haver.com), dar click en _Client area_ donde te pedirán un código de usuario^[El código de usuario lo puedes solicitar por correo a Mateo Echeverri <mateo@haver.com> o Haver Hotline <data@haver.com>.], seleccionar _Resources_, después ingresar en _Using DLX Data with Third Party Statistical Software_, y selecionar la __guía de usuario para R__ [@haver_r].
 
 
 ## Consulta con Python
@@ -156,4 +158,4 @@ alt.Chart(currency).mark_line(color="darkred").encode(
 
 Para acceder a la guía completa del paquete `Haver` en Python puedes:
 
-- ingresar a la página oficial de [Haver Analytics](http://www.haver.com), dar click en _Client area_ donde te pedirán un código de usuario el cual te lo pueden dar a través del correo <data@haver.com>, seleccionar _Resources_, después ingresar en _Using DLX Data with Third Party Statistical Software_, y selecionar la __guía de usuario para Python__ [@haver_python].
+- ingresar a la página oficial de [Haver Analytics](http://www.haver.com), dar click en _Client area_ donde te pedirán un código de usuario^[El código de usuario lo puedes solicitar por correo a Mateo Echeverri <mateo@haver.com> o Haver Hotline <data@haver.com>.], seleccionar _Resources_, después ingresar en _Using DLX Data with Third Party Statistical Software_, y selecionar la __guía de usuario para Python__ [@haver_python].

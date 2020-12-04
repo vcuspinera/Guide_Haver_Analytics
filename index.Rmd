@@ -37,8 +37,8 @@ Algunas de las bases que se tienen contratadas son:
 9. FOCUS ECONOMIC CONSENSUS. Información histórica sobre expectativas de indicadores económicos para una variedad de economías.
 
 
-[Da click aquí](http://webinterno/centro-de-informacion-electronica/acceso-a-recursos-electronicos/bases-de-datos-con-informacion-estadistica/haver-analytics-global/haver-analytics-global--.html) para revisar con mayor detalle los servicios contratados por Banxico a Haver Analytics.
+[Aquí](http://webinterno/centro-de-informacion-electronica/acceso-a-recursos-electronicos/bases-de-datos-con-informacion-estadistica/haver-analytics-global/haver-analytics-global--.html) encontrarás mayor detalle de los servicios contratados por Banxico a Haver Analytics.^[Liga a página interna de Banxico.]
 
 
 ## Salvedad de uso
-⚠ El contenido de este documento interno, así como las conclusiones que de éste se deriven, son responsabilidad exclusiva del autor y no reflejan necesariamente las del Banco de México.
+⚠ El contenido de este documento, así como las conclusiones que de éste se deriven, son responsabilidad exclusiva del autor y no reflejan necesariamente las del Banco de México.

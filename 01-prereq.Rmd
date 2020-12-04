@@ -15,3 +15,5 @@ Ingresa al [webinterno](http://webinterno), y sigue la siguinte ruta:
 Aquí encontrarás un formato que llenarás para solicitar la instalación del paquete __DLX 7.00.000__; posteriormente, una persona de la _Oficina de Cómputo Personal_ te contactará para realizar la instalación del paquete en tu equipo de cómputo.
 
 Es importante solicitar el complemento (add-in) de este paquete para Excel al momento de la instalación.
+
+En caso de tener problemas con la instalación, o en caso de requerir la instalación de en tu equipo personal por no tener acceso al escritorio remoto en el equipo del Banco, se recomienda contactar a [Mateo Echeverri](<mateo@haver.com>) quien es el representante de la cuenta de Haver con Banxico.

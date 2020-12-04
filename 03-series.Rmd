@@ -7,7 +7,7 @@ Como se mencionó en la introducción, el Banco tiene contratado una subscripci�
 Es importante mencionar que aunque algunas serie se encuentran replicadas en bases de datos distintas, estas pueden tener algunas pequeñas modificaciones para ajustarse a la periodicidad o formato de las otras series de la base de datos.
 
 ## Bases de datos
-En el siguiente cuadro se muestran las 29 bases de datos contratadas por Banxico, junto con su descripción y número de series.^[Información consultada el 2020-11-24 en DLX y a través de Python.]
+En el siguiente cuadro se muestran las 29 bases de datos contratadas por Banxico, junto con su descripción y número de series.^[Información consultada el 2020-11-24 en DLX y a través de Python. Las series y bases de datos podría variar respecto a las presentadas en este cuadro.]
 
 | Database | Group| Description | No. de series |
 |:---------|:-----|:------------|--------------:|
