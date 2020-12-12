@@ -26,7 +26,7 @@ The views and conclusions presented in this Repository and electronic book, are 
 
 El [Banco de México](https://www.banxico.org.mx) tiene contratada una subscripción a algunas de las bases de datos de esta empresa, por lo que cualquier trabajador del banco puede solicitar el acceso a esta información sin incurrir en costo adicional alguno.
 
-El objetivo de este repositorio es compartir una Guía para usar Haver Analytics dirigida a los empleados del Banco de México, desarrollada en R bookdown. Este libro electríco se puede acceder en la siguiente liga:  
+El objetivo de este repositorio es compartir una Guía para usar Haver Analytics dirigida a los empleados del Banco de México, desarrollada en R bookdown. Este libro electrónico se puede acceder en la siguiente liga:  
 ### https://bookdown.org/vcuspinera/Guide_Haver_Analytics/
 
 __⚠__ _Advertencia: el contenido de esta guía está en idioma Español._
